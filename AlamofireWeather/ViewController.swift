@@ -10,9 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var tempretureLabel: UILabel!
+    
+    let url = URL(string: "https://api.darksky.net/forecast/afb75bacab865b615b8bb0362551be52/37.8267,-122.4233")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let wearther = NetworkServices()
+      
+        
+        wearther.getCurrentWeather(url!)
+        
+        
     }
 
 

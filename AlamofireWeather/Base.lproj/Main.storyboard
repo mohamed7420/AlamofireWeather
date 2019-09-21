@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,56 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AlamofireWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weatherBg" translatesAutoresizingMaskIntoConstraints="NO" id="UVk-1A-gR3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="vSQ-vC-aVT">
+                                <rect key="frame" x="110.5" y="93" width="193" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="4yp-6J-khO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUe-e2-jZ9">
+                                <rect key="frame" x="20" y="343" width="374" height="112"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="W90-V4-frt"/>
+                                    <constraint firstAttribute="width" constant="374" id="YFa-Yw-Cxq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="47"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aUe-e2-jZ9" firstAttribute="top" secondItem="vSQ-vC-aVT" secondAttribute="bottom" constant="50" id="1OK-2E-ugV"/>
+                            <constraint firstItem="UVk-1A-gR3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2HK-0s-9vC"/>
+                            <constraint firstItem="vSQ-vC-aVT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HbH-T9-UW4"/>
+                            <constraint firstAttribute="bottom" secondItem="UVk-1A-gR3" secondAttribute="bottom" id="ePI-CR-cd2"/>
+                            <constraint firstItem="UVk-1A-gR3" firstAttribute="top" secondItem="vSQ-vC-aVT" secondAttribute="bottom" constant="-293" id="iO9-RC-8MJ"/>
+                            <constraint firstItem="UVk-1A-gR3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lfD-1h-TRS"/>
+                            <constraint firstItem="UVk-1A-gR3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="p1s-GP-afE"/>
+                            <constraint firstItem="aUe-e2-jZ9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ufv-7V-pls"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="logoImage" destination="vSQ-vC-aVT" id="aGJ-XV-4jB"/>
+                        <outlet property="tempretureLabel" destination="aUe-e2-jZ9" id="c0U-OV-PAe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="95.758928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="200" height="200"/>
+        <image name="weatherBg" width="1600" height="1199"/>
+    </resources>
 </document>
